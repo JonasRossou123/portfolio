@@ -1,0 +1,26 @@
+.contact {
+  padding-top: 23vh;
+  padding-left: 15vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, rgba($primary-color, 1), rgba($primary-color, 0.5)), url("../dist/background1.jpg")  no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
+  background-position: 70% 50%;
+
+  h2{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+}

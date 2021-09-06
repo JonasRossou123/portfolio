@@ -1,0 +1,70 @@
+
+.about {
+  
+  .left {
+    background-image: url("../dist/img/jonas.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 53% 25%;
+  }
+
+  .right {
+    padding:3rem 4rem;
+    line-height: 1.7rem;
+    font-size:1.15rem;
+    text-align: justify;
+
+      .scroll {
+        font-size: 1rem;
+        color: #fff!important;
+        &:hover{
+          animation: dance 2s infinite;
+          cursor: pointer;
+          color: $secondary-color!important;
+        }
+        @keyframes dance {
+          0%{
+            transform: translateY(0px);
+          }
+          50%{
+            transform: translateY(-20px);
+          }
+          100%{
+            transform: translateY(0px);
+          }
+        }
+      }
+  }
+
+  .jobs {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+
+    &__job {
+      background: lighten($primary-color, 10%);
+      padding: 0.5rem;
+      border-bottom: 5px solid $secondary-color;
+
+      h2, h3 {
+        margin: 0.5rem 0;
+      }
+
+      h6 {
+        margin: 0.3rem 0;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    transform: rotate(90deg) translate(-3rem, -60px);
+  }
+}

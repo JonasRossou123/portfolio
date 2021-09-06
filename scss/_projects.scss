@@ -1,0 +1,143 @@
+.projects {
+  padding-bottom: 2rem;
+
+  &__bio-image {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, rgba($primary-color, 0.7), rgba($primary-color, 0.3)), url("../dist/img/projects.jpeg");
+    background-position: 100% 30%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-secondary {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      padding-left: 60%;
+      color: #fff!important;
+      &:hover{
+        animation: dance 2s infinite;
+        cursor: pointer;
+        color: $secondary-color!important;
+      }
+      @keyframes dance {
+        0%{
+          transform: translateY(0px);
+        }
+        50%{
+          transform: translateY(-20px);
+        }
+        100%{
+          transform: translateY(0px);}
+      }
+    }
+
+
+  }
+
+  &__title {
+    visibility: hidden;
+  }
+  &__items {
+    width: 40vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+
+  &__item {
+    position: relative;
+    border-bottom: 5px solid $secondary-color;
+    overflow: hidden;
+    cursor: pointer;
+
+    .projects__name{
+      position: absolute;
+      width: 100px;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background: #1a1a1a;
+      color: $secondary-color;
+      font-weight: bolder;
+      opacity: 100%;
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      z-index:-99;
+      opacity: 70%;
+    }
+
+
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $secondary-color;
+      opacity: 0;
+      @include transition-ease;
+    }
+
+    &:hover {
+      &::after {
+        top: 0;
+        opacity: 0.9;
+      }
+
+      .projects__btn {
+        opacity: 1;
+      }
+
+      .projects__name{
+        opacity: 0;
+      }
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+  }
+
+  &__btn {
+    opacity: 0;
+    color: set-text-color($secondary-color);
+    @include transition-ease;
+
+    &:hover {
+      color: set-text-color($secondary-color);
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    transform: rotate(90deg) translate(-3rem, -60px);
+  }
+
+}
